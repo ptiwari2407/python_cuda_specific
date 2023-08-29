@@ -78,6 +78,11 @@ sudo reboot
 nvidia-smi
 nvcc -V
 
+# STOP cuda and nvidia upgrades
+dpkg -l | grep nvidia-driver
+sudo apt-mark hold nvidia-driver-<Insert driver number here>
+
+
 # install Pytorch (an open source machine learning framework)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
@@ -94,6 +99,8 @@ export LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-11.8/bin:$PATH
 # export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 export CUDA_VISIBLE_DEVICES=0,1
+
+
 
 source ~/.bashrc
 
