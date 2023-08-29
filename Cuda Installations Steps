@@ -82,6 +82,8 @@ nvcc -V
 dpkg -l | grep nvidia-driver
 sudo apt-mark hold nvidia-driver-<Insert driver number here>
 
+# Go to Software and Updates and un-check nvidia repository in "Other Software"
+
 
 # install Pytorch (an open source machine learning framework)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
