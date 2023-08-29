@@ -1,0 +1,42 @@
+## Notes for Python Developers/Data-Scientists
+1. Always pin your dependency. This is foremost requirement before starting a project.
+2. Know your python version.
+2.1 Development in container: No worries, you do not need multiple versions of python on your system.
+2.2 Development on Linux/Mac OS: Make sure you do not change the base python version as this might interrupt your system. Try to have a side-by-side installation of another version of python.
+3. To be able to do that you need to be able to create your own virtual environments. For this there are many tools - major of them being virtualenv, venv.
+3.1 Virtualenv
+This is one of the good tools to create virtual environment. It is better than venv, read the documentation here:
+https://virtualenv.pypa.io/en/latest/
+But one chief point for working with multiple python version on same system requires:
+3.1.1 That virtual environments can select for arbitrarily installed python versions (and automatically discover these).
+
+
+3.2 venv
+It has taken up some functionality from virtualenv and integrated it as part of core python, but accurately self-detecting python path is not supported.
+However, one will get by fine say the differences between 3.11.1 and 3.11.4 are not too much and one can use just python3.11 -m venv Virtual_env_name
+
+
+4 Dependency Management Tool
+Conda vs pip vs poetry
+https://blogs.sap.com/2022/05/08/why-you-should-use-poetry-instead-of-pip-or-conda-for-python-projects/
+
+
+
+## Benefits of development in Container
+Pros:
+1. When developing in the container, it is highly probable that you have pinned your dependencies and it allows for reproducing your working code easily on any system.
+2. Data-Scientists can do without it. As their code does not all deploy directly and consists alot of experiments, than actual deployment work.
+Cons:
+1. Has quite a bit of learning curve to it, that amounts to expanding your repertoire of containers. But it will actually pay-off in the future.
+Most start-ups have already switched to this way of development as every team developing it's own micro-services will be responsible for their side of working code.
+
+
+
+## When working on shared Resource Group for In-House Computing Power.
+sudo: Super users (Adminsitrative Rights)
+Non sudo : Users with no administrative rights
+
+Requirements:
+Non-sudo users should be able to do repetitive things by themselves and admin should ensure that this is possible, without risking security.
+
+Methodology for System Design:
