@@ -1,0 +1,92 @@
+# Steps for Python Installation and Virtual environment
+
+1. Install Base Python to a folder.
+2. Use this base-python as the base for your Python Virtualenv
+3. If you are not using an IDE, you would have to this following way while using command prompt.
+** Linux Related **
+1. sudo apt install python3-pip
+2. sudo pip install virtualenv
+3.1 virtualenv virtual_env_name -p **Path_to_Base_Python**
+virtualenv Obj-Detect -p C:\Users\Prem.Tiwari\Documents\python_exe\python.exe
+3.2 Activate the virtual_environment by: 
+virtual_env_name\Scripts\activate (if Windows)
+source virtual_env_name/bin/activate (if Ubuntu)
+
+4. Now using the most light-weight dependency-management-tool, we use pip-tool first
+4.1 pip install pip-tools
+4.2 Create a file called requirements.in (if windows), else touch requirements.in(if Ubuntu)
+4.3 Enter the requisite python-libraries by opening this file (if windows),  else nano requirements.in(if ubuntu)
+
+5. Run this command to generate requirements.txt
+pip-compile
+pip-sync
+pip install -r requirements.txt
+
+6. Install Jupyter
+
+
+
+Pass and keys
+1. Jupyter 
+Username: prem
+pass: 123456
+
+2. No Machine
+Enter the system and always log out.
+
+
+
+
+### To move files from WSL to Ubuntu
+mv /mnt/c/Users/<windows.username>/Pictures . //. is where you want to copy the current directory
+cd /mnt/c/Users/Prem.Tiwari/Documents/competition_forecast/
+
+
+whereis 
+
+** Terminal Installation
+https://www.youtube.com/watch?v=UvY5aFHNoEw&ab_channel=pixegami
+
+
+
+
+Nvidia Installation
+**** Purge Nvidia ****
+sudo apt-get remove --purge '^nvidia-.*'
+nvidia
+sudo apt-get autoremove
+
+sudo apt update
+
+
+*** Install Missing dependencies *****
+sudo apt install libnvidia-common-525
+sudo apt install libnvidia-gl-525
+sudo apt install nvidia-driver-525
+sudo reboot
+
+
+*** Cuda Installation
+dkms status
+
+sudo apt --fix-broken install
+
+*** Remove Cuda
+sudo apt-get --purge -y remove 'cuda*'
+sudo apt-get autoremove --purge cuda
+sudo apt purge "libcublas*" "cuda-*" cuda
+
+sudo rm /etc/apt/sources.list.d/cuda*
+
+sudo rm /usr/local/cuda/include/cudnn.h
+sudo rm /usr/local/cuda/lib64/libcudnn*
+
+
+
+
+*** Switching between GCC and G++ compilers
+
+sudo update-alternatives --config gcc
+
+
+
