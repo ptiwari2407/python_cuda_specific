@@ -81,6 +81,8 @@ nvcc -V
 # STOP cuda and nvidia upgrades
 dpkg -l | grep nvidia-driver
 sudo apt-mark hold nvidia-driver-<Insert driver number here>
+dpkg -l | grep bazel
+sudo apt-mark hold bazel-5.3.1
 
 # Go to Software and Updates and un-check nvidia repository in "Other Software"
 
